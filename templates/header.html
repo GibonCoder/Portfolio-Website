@@ -1,44 +1,46 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="widthh=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Portfolio Website">
-    <meta name="author" content="Szymon Tomasiak">
-    <title>Portfolio Website</title>
-    {% block styles %}
-    {% endblock %}
-    <!-- Load Bootstrap-Flask CSS -->
-    {{ bootstrap.load_css() }}
-    <!-- Bootstrap CSS -->
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
-</head>
-
-<!-- Navigation bar -->
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a href="/" class="navbar-brand">Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                <li class="nav-item">
-                    <a
-                      class="nav-link px-lg-3 py-3 py-lg-4"
-                      href="{{ url_for('index') }}"
-                      >Home</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="widthh=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="Portfolio Website">
+        <meta name="author" content="Szymon Tomasiak">
+        <title>Portfolio Website</title>
+        {% block styles %}
+        {% endblock %}
+        <!-- Load Bootstrap-Flask CSS -->
+        {{ bootstrap.load_css() }}
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a href="/" class="navbar-brand">Portfolio</a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarResponsive"
+                  aria-controls="navbarResponsive"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  Menu
+                  <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item">
+                            <a
+                              class="nav-link px-lg-3 py-3 py-lg-4"
+                              href="{{ url_for('index') }}"
+                              >Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
