@@ -9,6 +9,10 @@ bootstrap = Bootstrap5(app)
 def index():
     return render_template('index.html')
 
+@app.get('/about-me')
+def about_me():
+    return render_template('about-me.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
