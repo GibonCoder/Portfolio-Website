@@ -6,7 +6,7 @@ bootstrap = Bootstrap5(app)
 
 
 @app.get('/')
-def hello():
+def index():
     return render_template('index.html')
 
 
