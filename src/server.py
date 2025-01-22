@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap5
 from forms import ContactForm
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
+app.config['SECRET_KEY'] = 'dummykey'   # Temporary placeholder. Change later
 bootstrap = Bootstrap5(app)
 
 
