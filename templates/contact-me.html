@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% from 'bootstrap5/form.html' import render_form %}
+{% include 'header.html' %}
 
-</body>
-</html>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{ render_form(form, novalidate=True) }}
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
