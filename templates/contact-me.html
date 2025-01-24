@@ -3,8 +3,20 @@
 
 <div class="container">
     <div class="row">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {% for message in messages %}
+                        <div class="text-info-emphasis">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
         <div class="col-lg-8 col-md-10 mx-auto">
             {{ render_form(form, novalidate=True) }}
+            <p class="text-secondary">Fields marked with * are required.</p>
         </div>
     </div>
 </div>
