@@ -1,9 +1,13 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap5
 from forms import ContactForm
 
+load_dotenv()
+
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
-app.config['SECRET_KEY'] = 'dummykey'   # Temporary placeholder. Change later
+app.config['SECRET_KEY'] = os.getenv('APP_SECRET_KEY')
 bootstrap = Bootstrap5(app)
 
 
