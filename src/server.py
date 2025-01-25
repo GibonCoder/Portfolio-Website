@@ -1,4 +1,5 @@
 import os
+from datetime import date
 from dotenv import load_dotenv
 from flask import Flask, render_template, url_for, flash
 from flask_bootstrap import Bootstrap5
@@ -9,6 +10,11 @@ load_dotenv()
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.config['SECRET_KEY'] = os.getenv('APP_SECRET_KEY')
 bootstrap = Bootstrap5(app)
+
+
+@app.context_processor
+def inject_year():
+    return {'year': date.today().year}
 
 
 @app.route('/')
