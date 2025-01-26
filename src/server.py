@@ -4,14 +4,24 @@ from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
+# Forms import from forms.py
 from forms import ContactForm, AddProjectForm
+# Db and models import from models.py
+from models import db, Project
 
 load_dotenv()
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.config['SECRET_KEY'] = os.getenv('APP_SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
+
 bootstrap = Bootstrap5(app)
 ckeditor = CKEditor(app)
+db.init_app(app)
+
+# Create database
+with app.app_context():
+    db.create_all()
 
 
 @app.context_processor
@@ -40,17 +50,26 @@ def contact_me():
 
 
 @app.route('/projects')
-def projects():
-    return render_template('projects.html')
+def get_all_projects():
+    res = db.session.execute(db.select(Project))
+    projects = res.scalars().all()
+    return render_template('projects.html', projects=projects)
 
 
 @app.route('/add-project/<login>/<password>', methods=['GET', 'POST'])
 def add_project(login, password):
-    if login == 'admin' and password == 'admin':  # dummy values. TODO: Change for actual values
+    if login == 'admin' and password == 'admin':  # dummy values. TODO: Change for actual values (actual identification)
         project_form = AddProjectForm()
         if project_form.validate_on_submit():
+            new_project = Project(
+                title=project_form.title.data,
+                gh_link=project_form.link.data,
+                description=project_form.description.data
+            )
+            db.session.add(new_project)
+            db.session.commit()
             flash('Project added successfully')
-            return redirect(url_for('index'))   # TODO: Change for projects page
+            return redirect(url_for('get_all_projects'))
         else:
             return render_template('add-project.html', form=project_form)
     else:
