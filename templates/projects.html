@@ -2,6 +2,18 @@
 
 {% block content %}
     <div class="col-lg-8 col-md-10 col-xs-12">
-        <h2>There will be my projects</h2>
+        <div class="projects">
+            <ul class="list-group">
+                {% for project in projects %}
+                    <li class="list-group-item list-group-item-light">
+                        <div class="project-preview">
+                            <h2 class="project-title">{{ project.title }}</h2>
+                            <h6 class="project-description-shortened text-secondary">{{ project.description[3:50] }}...</h6>
+                            <a href="/">See project</a> <!-- This link should redirect to the project page -->
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}
