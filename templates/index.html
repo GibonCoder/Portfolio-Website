@@ -1,28 +1,23 @@
- {% include 'header.html' %}
+{% extends 'base.html' %}
 
- <div class="container position-relative px-4 px-lg-5">
-     <div class="row gx-4 gx-lg-5 justify-content-center">
-         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    {% for message in messages %}
-                        <div class="text-danger">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-         <div class="col-md-10 col-lg-8 col-xl-6">
-             <button type="button" class="btn btn-primary">Test Button</button>
-         </div>
-     </div>
- </div>
+{% block content %}
+<div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        {% with messages = get_flashed_messages() %}
+           {% if messages %}
+               <div class="col-lg-8 col-md-10 mx-auto">
+                   {% for message in messages %}
+                       <div class="text-danger">
+                           {{ message }}
+                       </div>
+                   {% endfor %}
+               </div>
+           {% endif %}
+       {% endwith %}
+        <div class="col-md-10 col-lg-8 col-xl-6">
+            <button type="button" class="btn btn-primary">Test Button</button>
+        </div>
+    </div>
+</div>
 
-
-
- <!-- Bootstrap core JS-->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
- <!-- Core theme JS-->
-
- {% include 'footer.html' %}
+{% endblock %}

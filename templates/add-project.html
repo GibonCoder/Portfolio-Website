@@ -1,5 +1,7 @@
 {% from "bootstrap5/form.html" import render_form %}
-{% include 'header.html' %}
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="container position-relative px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
         {% with messages = get_flashed_messages() %}
@@ -20,4 +22,4 @@
         </div>
     </div>
 </div>
-{% include 'footer.html' %}
+{% endblock %}
