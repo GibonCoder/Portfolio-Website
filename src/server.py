@@ -39,6 +39,11 @@ def contact_me():
     return render_template('contact-me.html', form=contact_form)
 
 
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+
 @app.route('/add-project/<login>/<password>', methods=['GET', 'POST'])
 def add_project(login, password):
     if login == 'admin' and password == 'admin':  # dummy values. TODO: Change for actual values
@@ -51,8 +56,6 @@ def add_project(login, password):
     else:
         flash("You don't have permission to add new projects")
         return redirect(url_for('index'))
-
-
 
 
 if __name__ == '__main__':
