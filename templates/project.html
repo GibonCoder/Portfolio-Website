@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-lg-8 col-md-10 col-xs-12">
+        <div class="project">
+            <h2 class="project-title">Title: {{ project.title }}</h2>
+            <a href="{{project.gh_link}}" class="project-link text-secondary">See project</a>
+            <h4 class="project-description">{{ project.description | safe }}</h4>
+        </div>
+    </div>
+{% endblock %}

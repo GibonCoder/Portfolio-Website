@@ -56,6 +56,12 @@ def get_all_projects():
     return render_template('projects.html', projects=projects)
 
 
+@app.route('/project/<int:project_id>')
+def get_project(project_id):
+    requested_project = db.get_or_404(Project, project_id)
+    return render_template('project.html', project=requested_project)
+
+
 @app.route('/add-project/<login>/<password>', methods=['GET', 'POST'])
 def add_project(login, password):
     if login == 'admin' and password == 'admin':  # dummy values. TODO: Change for actual values (actual identification)
