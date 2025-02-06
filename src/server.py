@@ -8,13 +8,27 @@ from flask_ckeditor import CKEditor
 from forms import ContactForm, AddProjectForm
 # Db and models import from models.py
 from models import db, Project
+# Contact Model import
+from mailer import Mailer
 
 load_dotenv()
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.config['SECRET_KEY'] = os.getenv('APP_SECRET_KEY')
+
+# Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 
+# Mail configuration
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
+
+# Initialize mailer
+mailer = Mailer(app)
+
+# Initialize bootstrap and ckeditor
 bootstrap = Bootstrap5(app)
 ckeditor = CKEditor(app)
 db.init_app(app)
