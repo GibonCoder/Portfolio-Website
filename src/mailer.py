@@ -5,21 +5,21 @@ class Mailer:
     def __init__(self, flask_app):
         self._mail = Mail(flask_app)
 
-    def send_contact_mail(self, cm_subj, rp_email, cm_message, cm_email):
+    def send_contact_mail(self, message_subj, recipient_email, message, service_email):
         msg = Message(
-            subject=cm_subj,
-            sender=cm_email,
-            recipients=[cm_email],
-            body=f'''You have received a new message from {rp_email}:
-            {cm_message}'''
+            subject=message_subj,
+            sender=service_email,
+            recipients=[recipient_email],
+            body=f'''You have received a new message from {recipient_email}:
+            {message}'''
         )
         self._mail.send(msg)
 
-    def send_confirmation_mail(self, cm_mail, rp_email):
+    def send_confirmation_mail(self, service_email, recipient_email):
         msg = Message(
             subject="Thanks for contacting me!",
-            sender=cm_mail,
-            recipients=[rp_email],
+            sender=service_email,
+            recipients=[recipient_email],
             body='''Hey there!\n Thanks for reaching out to me. I will get back to you as soon as possible.'''
         )
         self._mail.send(msg)
