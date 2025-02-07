@@ -15,11 +15,11 @@ class Mailer:
         )
         self._mail.send(msg)
 
-    def send_confirmation_mail(self, service_email, recipient_email):
+    def send_confirmation_mail(self, service_email, recipient_email, name):
         msg = Message(
             subject="Thanks for contacting me!",
             sender=service_email,
             recipients=[recipient_email],
-            body='''Hey there!\n Thanks for reaching out to me. I will get back to you as soon as possible.'''
+            body=f'''Hey there {name}!\n Thanks for reaching out to me. I will get back to you as soon as possible.'''
         )
         self._mail.send(msg)
