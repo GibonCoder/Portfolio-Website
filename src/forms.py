@@ -7,6 +7,7 @@ from flask_ckeditor import CKEditorField
 class ContactForm(FlaskForm):
     title = StringField("Title", default="Contact request")
     email = EmailField("*Email", validators=[DataRequired(), Email("Please enter a valid email address")])
+    name = StringField("Name", validators=[DataRequired()])
     content = TextAreaField("*Message", validators=[DataRequired(), length(max=400)])
     submit = SubmitField("Send Message")
 
