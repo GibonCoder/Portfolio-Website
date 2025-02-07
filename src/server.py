@@ -72,7 +72,7 @@ def contact_me():
             recipient_email=contact_form.email.data,
             name=contact_form.name.data
         )
-        return render_template('contact-me.html', form=contact_form)
+        return redirect(url_for('contact_me'))
     return render_template('contact-me.html', form=contact_form)
 
 
