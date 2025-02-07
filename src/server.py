@@ -61,7 +61,17 @@ def contact_me():
     contact_form = ContactForm()
     if contact_form.validate_on_submit():
         flash('Message sent successfully')
-        # TODO: Add functionality for sending emails
+        mailer.send_contact_mail(
+            message_subj=contact_form.title.data,
+            recipient_email=contact_form.email.data,
+            message=contact_form.content.data,
+            service_email=os.getenv('MAIL_USERNAME')
+        )
+        mailer.send_confirmation_mail(
+            service_email=os.getenv('MAIL_USERNAME'),
+            recipient_email=contact_form.email.data,
+            name=contact_form.name.data
+        )
         return render_template('contact-me.html', form=contact_form)
     return render_template('contact-me.html', form=contact_form)
 
