@@ -1,11 +1,19 @@
 body {
-    background-color: rgb(244, 255, 195);
+    background-color: #f2f1eb;
 }
 
-.constant-box {
-    background-color: rgb(169, 196, 108);
+.navbar {
+    background-color: #3a6351;
+    color: #f2f1eb;
 }
 
-.navbar-toggler {
-    border-color: rgb(54, 94, 50);
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-toggler {
+    color: #a79277;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #a79277;
 }
