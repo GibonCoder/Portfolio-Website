@@ -22,3 +22,25 @@ footer {
     color: #f9f5ec;
     font-family: 'Lora', serif;
 }
+
+.projects .list-group li {
+    /* TODO: Think about layout */
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.projects .list-group .project-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.projects .list-group .project-description {
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.projects .list-group a {
+    font-style: italic;
