@@ -10,9 +10,15 @@ body {
 .navbar .nav-link,
 .navbar .navbar-toggler {
     color: #f2f1eb;
+    font-family: 'Poppins', sans-serif;
 }
-
 
 .navbar-nav .nav-link:hover {
     color: #a79277;
+}
+
+footer {
+    background-color: #3a6351;
+    color: #f9f5ec;
+    font-family: 'Lora', serif;
 }
