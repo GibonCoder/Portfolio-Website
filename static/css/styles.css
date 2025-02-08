@@ -4,13 +4,12 @@ body {
 
 .navbar {
     background-color: #3a6351;
-    color: #f2f1eb;
 }
 
 .navbar .navbar-brand,
 .navbar .nav-link,
 .navbar .navbar-toggler {
-    color: #a79277;
+    color: #f2f1eb;
 }
 
 
