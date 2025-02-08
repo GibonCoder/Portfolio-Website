@@ -9,7 +9,8 @@
                         <div class="project-preview">
                             <h2 class="project-title">{{ project.title }}</h2>
                             <h6 class="project-description-shortened text-secondary">{{ project.description[3:50] }}...</h6>
-                            <a href="{{url_for('get_project', project_id=project.id)}}">See project</a> <!-- This link should redirect to the project page -->
+                            <a class="text-decoration-none" href="{{url_for('get_project', project_id=project.id)}}">See project</a> <!-- This link should redirect to the project
+                            page -->
                         </div>
                     </li>
                 {% endfor %}
