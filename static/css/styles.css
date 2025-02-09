@@ -61,4 +61,11 @@ footer {
 }
 
 .hero .introduction {
-    max-width: 37.5em
+    max-width: 40em;
+
+}
+
+.hero img {
+    width: 16em;
+    height: 16em;
+}
