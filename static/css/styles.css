@@ -4,6 +4,7 @@ body {
 
 .navbar {
     background-color: #3a6351;
+    margin-bottom: 0.31em
 }
 
 .navbar .navbar-brand,
@@ -25,9 +26,8 @@ footer {
 
 .projects .list-group li {
     /* TODO: Think about layout */
-    padding: 15px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    padding: 0.94em;
+    margin-bottom: 0.63em;
 }
 
 .projects .list-group .project-title {
@@ -44,3 +44,8 @@ footer {
 
 .projects .list-group a {
     font-style: italic;
+}
+
+.hero, .bio, .skills, .experience, .education{
+    margin-bottom: 0.63em
+}

@@ -2,6 +2,34 @@
 
 {% block content %}
     <div class="col-lg-8 col-md-10 col-xs-12">
-        <p class="h2">About me</p>
+        <div class="hero">
+            <p class="name">Szymon Tomasiak</p>
+            <p class="tagline">There will be tagline</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-xs-6">
+                    <img src="{{ url_for('static', filename='') }}" alt="picture" class="rounded-circle shadow-4-strong"/>
+                </div>
+                <div class="col-lg-4 col-md-5 col-xs-6">
+                    <div class="introduction">There will be intro</div>
+                </div>
+            </div>
+        </div>
+        <div class="bio">
+            There will be bio section
+        </div>
+        <div class="skills">
+            There will be skills section
+        </div>
+        <div class="experience">
+            There will be experience section
+        </div>
+        <div class="education">
+            There will be education section
+        </div>
+        <a href="url_for('contact_me')">
+            <button class="btn btn-success btn-lg btn-block">
+                Contact me
+            </button>
+        </a>
     </div>
 {% endblock %}
