@@ -49,3 +49,16 @@ footer {
 .hero, .bio, .skills, .experience, .education{
     margin-bottom: 0.63em
 }
+
+.hero .name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+}
+
+.hero .tagline {
+    font-family: 'Lora, serif';
+    font-size: 1.13em;
+}
+
+.hero .introduction {
+    max-width: 37.5em
