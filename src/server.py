@@ -110,5 +110,19 @@ def add_project(login, password):
         return redirect(url_for('index'))
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    pass
+
+
+@app.route('logout')
+def logout():
+    pass
+
+
+@app.route('admin-panel')
+def admin_panel():
+    pass
+
 if __name__ == '__main__':
     app.run(debug=True)
