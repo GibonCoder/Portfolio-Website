@@ -1,7 +1,9 @@
 body {
     background-color: #f2f1eb;
+    padding-bottom: 1em
 }
 
+/* Navbar styling */
 .navbar {
     background-color: #3a6351;
     margin-bottom: 0.31em
@@ -24,6 +26,7 @@ footer {
     font-family: 'Lora', serif;
 }
 
+/* Projects styling */
 .projects .list-group li {
     /* TODO: Think about layout */
     padding: 0.94em;
@@ -46,6 +49,7 @@ footer {
     font-style: italic;
 }
 
+/* About me styling */
 .hero, .bio, .skills, .experience, .education{
     margin-bottom: 0.63em
 }
@@ -69,3 +73,46 @@ footer {
     width: 16em;
     height: 16em;
 }
+
+/* Timeline styling*/
+.timeline {
+    position: relative:
+    padding: 1.25em 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.125em;
+    background-color: #e9ecef;
+    left: 50%;
+    margin-left: -0.0625em;
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 1.25em;
+clear: both;
+}
+
+.timeline-item:before,
+.timeline-item:after {
+    content: '';
+    display: table;
+}
+
+timeline-item:after {
+    clear: both;
+}
+
+.timeline-item .timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 1.25em;
+    background-color: #f8f9fa;
+    border-radius: 0.25em;
+    border: 0.0625em solid #e9ecef;
+}
+
